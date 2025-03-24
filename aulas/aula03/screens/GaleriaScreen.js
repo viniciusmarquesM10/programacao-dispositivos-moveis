@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity } from "react-native";
 
 function GaleriaScreen() {
   const imagens = [
@@ -19,7 +19,9 @@ function GaleriaScreen() {
       </View>
       <ScrollView contentContainerStyle={styles.grid}>
         {imagens.map((imagem, index) => (
-          <Image style={styles.imagem} source={{ uri: imagem }} key={index} />
+          <TouchableOpacity style={styles.imagem} key={index}>
+          <Image style={{flex: 1}} source={{ uri: imagem }}  />
+          </TouchableOpacity>
         ))}
       </ScrollView>
     </View>
